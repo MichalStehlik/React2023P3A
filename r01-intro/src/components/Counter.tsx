@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+useState
 const Counter = (
     // {value, setValue}: {value: number, setValue: React.Dispatch<React.SetStateAction<number>>}
     // { value, setValue } : {value: number,  setValue: { (value: (prev: number) => number): void; (value: number): void}; }
@@ -16,4 +19,4 @@ const Counter = (
 
 export default Counter;
 // type UseState<S> = (action: S | ((prevState: S) => S)) => void;
-// 
+type X = ReturnType<typeof useState<number>>[1];
