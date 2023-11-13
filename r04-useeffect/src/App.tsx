@@ -1,33 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ControlledInput from './components/ControlledInput'
+import ControlledInput2 from './components/ControlledInput2'
+import EffectDemo from './components/EffectDemo'
+
+enum Mode {
+  Hidden = 0,
+  Visible = 1
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [text, setText] = useState<string>("Veselý koník");
+  const [mode, setMode] = useState<Mode>(Mode.Visible);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ControlledInput value={text} inputAction={setText} />
+      <ControlledInput2 value={text} inputAction={setText} />
+      <p>{text}</p>
+      {mode == Mode.Visible ? <EffectDemo value={text.length} /> : null}
+      <button onClick={
+        () => setMode(
+          x => x == Mode.Visible ? Mode.Hidden : Mode.Visible
+          )}>on/off</button>
     </>
   )
 }
