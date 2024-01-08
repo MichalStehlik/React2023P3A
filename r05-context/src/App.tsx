@@ -5,11 +5,11 @@ import './App.css'
 function App() {
   return (
     <>
-        <div>
+        <ThemedContainer>
           <ThemedComponent />
           <ThemedComponent />
           <ThemedComponent />
-        </div>
+        </ThemedContainer>
     </>
   )
 }
