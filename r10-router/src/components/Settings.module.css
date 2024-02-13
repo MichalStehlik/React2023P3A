@@ -1,0 +1,107 @@
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2em;
+  }
+  
+  
+  input[type="radio"] {
+    accent-color: orange;
+  }
+  
+  input[type="number"]:focus {
+    outline: none;
+    border-color: orange;
+  }
+  
+  input[type="number"],
+  input[type="radio"] {
+    max-width: 8em;
+    padding: 0.5em;
+    border: 2px solid orange; 
+    border-radius: 10px; 
+    background-color: rgba(255, 153, 0, 0.1); 
+    color: white;
+  }
+
+  .inputs > input {
+    margin-top: -2em;
+    background-color: var(--black);
+  }
+
+  .inputs > label {
+    background-color: var(--black);
+    position: relative;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+  
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  button {
+    font-size: 1.25em;
+    box-shadow: -3px -3px 16px 0px rgba(255, 255, 255, 0.10), 3px 3px 4px 0px rgba(0, 0, 0, 0.41);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 1em;
+    background-color: var(--black);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+    border: none;
+  }
+  
+  .radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  .radio > input {
+    background-color: var(--black);
+    position: relative;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+
+  .radio>label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+  }
+
+  button {
+    margin: 1em;
+    margin-top: 0.5em;
+  }
+
+  .inputs {
+    margin-top: 2em;
+  }
+
+  input[type="radio"] {
+    color: orange;
+    height: 30px;
+  }
+
+  .radio label {
+    width:5em;
+  }
+
+  input[type="radio"]:checked {
+    background-color: var(--black);
+    height: 30px;
+  }
