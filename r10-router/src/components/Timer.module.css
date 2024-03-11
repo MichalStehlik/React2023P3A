@@ -1,0 +1,100 @@
+
+.timer__count {
+    font-weight: bold;
+  }
+  
+  .timer__button {
+      color: var(--white);
+  }
+  
+  
+  progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80vw; 
+    height: 2em;
+    border-radius: 1em; 
+  }
+  
+  
+  progress::-webkit-progress-bar {
+    background-color: #444;
+    border-radius: 20px;
+    box-shadow: -3px -3px 16px 0px rgba(255, 255, 255, 0.10), 3px 3px 4px 0px rgba(0, 0, 0, 0.41);
+  
+  }
+  
+  progress::-webkit-progress-value {
+    background: linear-gradient(to right, #ff0000 0%, #ff7f00 25.99%, #ffff00 59.31%, #00ff00 100%);
+    border-radius: 1em; 
+    box-shadow: -3px -3px 16px 0px rgba(255, 255, 255, 0.10), 3px 3px 4px 0px rgba(0, 0, 0, 0.41);
+  
+  }
+  
+  progress::-moz-progress-bar {
+    background: linear-gradient(to right, #ff0000 0%, #ff7f00 25.99%, #ffff00 59.31%, #00ff00 100%);
+    border-radius: 1em; 
+    box-shadow: -3px -3px 16px 0px rgba(255, 255, 255, 0.10), 3px 3px 4px 0px rgba(0, 0, 0, 0.41);
+  
+  }
+  
+  
+  .time__progress_bar_critical::-webkit-progress-value {
+    background: red;
+  }
+  
+  .time__progress_bar_critical::-moz-progress-bar {
+    background: red;
+  }
+  
+  
+  .timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--black);
+  }
+  
+  .timer__title{
+    font-size: 3em;
+    margin-bottom: 2em;
+  }
+  
+  
+  .timer__time{
+    font-size: 3em;
+  }
+  
+  .timer__time_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .timer__milliseconds {
+    font-weight: bold;
+  }
+  
+  button {
+    font-size: 1.5em;
+    box-shadow: -3px -3px 16px 0px rgba(255, 255, 255, 0.10), 3px 3px 4px 0px rgba(0, 0, 0, 0.41);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 1em;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+    border: none;
+  }
+  
+  button:hover {
+    scale: 1.05;
+    background-color: rgb(214, 118, 0);
+    color: white;
+   }
