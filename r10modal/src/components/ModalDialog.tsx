@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useState, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './ModalDialog.module.css';
 
@@ -10,11 +10,18 @@ type ModalDialogProps = {
 
 const ModalDialog: React.FC<PropsWithChildren<ModalDialogProps>> = ({ show, onClose, title, children }) => {
     const [visible, setVisible] = useState(false);
+    const prepareToClose = useCallback(() => {
+        setVisible(false);
+        const interval = setTimeout(() => {
+            //clearTimeout(interval);
+            onClose();
+        }, 1000);
+    }, [onClose]);
     useEffect(() => {
         setVisible(show);
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
-                onClose();
+                prepareToClose();
             }
         };
         console.log("Adding event listener for Escape key.");
@@ -34,14 +41,14 @@ const ModalDialog: React.FC<PropsWithChildren<ModalDialogProps>> = ({ show, onCl
         };
     }, [show]);
     return show && createPortal(
-        <div className={styles.backdrop} onClick={onClose}>
+        <div className={styles.backdrop} onClick={prepareToClose}>
             <dialog open={show} className={`${styles.dialog} ${visible ? styles.visible : undefined}`}>
                 <header>
                     <p className={styles.title}>{title}</p>  
                 </header>     
             {children}
                 <footer>
-                    <button onClick={onClose}>Close</button>
+                    <button onClick={prepareToClose}>Close</button>
                 </footer>
             </dialog>
         </div>
